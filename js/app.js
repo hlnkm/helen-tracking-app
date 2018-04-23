@@ -5,8 +5,7 @@ window.onload = function(){
 
 	let mapApp = (function(){
 
-		let map,
-		locations;
+		let map;
 
 		let init = function(){
 			loadElements()
@@ -16,19 +15,18 @@ window.onload = function(){
 		function loadElements(){
 			initMap();
 			// loadData();
-			getLocations("../data/locations.json")
-
-
+			const locations = getLocations("../data/locations.json")
 
 			map.on('load', function(){
-				console.log(locations)
-					goToCurrentLocation();
+					locations.then( (data) => {
+						goToCurrentLocation(data.locations[0]);
 
-					addPoint(locations.locations[0], "nyc_01")
-					updateRadius("nyc_01")
+						addPoint(data.locations[0], "nyc_01")
+						updateRadius("nyc_01")
 
-					writeLocation(locations.locations[0])				
+						writeLocation(data.locations[0])		
 
+					})
 			})
 			
 		}
@@ -47,9 +45,9 @@ window.onload = function(){
 
 
 		// go to current location
-		function goToCurrentLocation(){
+		function goToCurrentLocation(location){
 			map.flyTo({
-				center:locations.locations[0].lnglat
+				center:location.lnglat
 			})
 		}
 
@@ -97,7 +95,7 @@ window.onload = function(){
 
 
 		async function getLocations(url){
-			locations = await $.getJSON(url);
+			let locations = await $.getJSON(url);
 			return locations
 		}
 
