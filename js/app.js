@@ -98,6 +98,7 @@ window.onload = function(){
 
 		async function getLocations(url){
 			locations = await $.getJSON(url);
+			return locations
 		}
 
 
