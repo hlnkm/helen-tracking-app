@@ -19,7 +19,9 @@ window.onload = function(){
 			locations = getLocations("../data/locations.json")
 
 
+
 			map.on('load', function(){
+				console.log(locations)
 				goToCurrentLocation();
 
 				addPoint(locations.locations[0], "nyc_01")
