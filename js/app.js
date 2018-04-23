@@ -16,18 +16,18 @@ window.onload = function(){
 		function loadElements(){
 			initMap();
 			// loadData();
-			locations = getLocations("../data/locations.json")
+			getLocations("../data/locations.json")
 
 
 
 			map.on('load', function(){
 				console.log(locations)
-				goToCurrentLocation();
+					goToCurrentLocation();
 
-				addPoint(locations.locations[0], "nyc_01")
-				updateRadius("nyc_01")
+					addPoint(locations.locations[0], "nyc_01")
+					updateRadius("nyc_01")
 
-				writeLocation(locations.locations[0])
+					writeLocation(locations.locations[0])				
 
 			})
 			
