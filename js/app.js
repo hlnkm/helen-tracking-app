@@ -16,7 +16,7 @@ window.onload = function(){
 			initMap();
 			map.on('load', function(){
 
-				getLocations("/data/locations.json")
+				getLocations("../data/locations.json")
 					.then( (data) => {
 						goToCurrentLocation(data.locations[0])
 						return data;
@@ -27,12 +27,7 @@ window.onload = function(){
 						writeLocation(data.locations[0])
 						return true
 					})
-						
-
-						// addPoint(data.locations[0], "nyc_01")
-						// updateRadius("nyc_01")
-
-						// writeLocation(data.locations[0])		
+							
 			})
 			
 		}
@@ -41,8 +36,8 @@ window.onload = function(){
 			map = new mapboxgl.Map({
 			    container: 'map-container',
 			    style: 'mapbox://styles/mapbox/satellite-v9',
-			    center:[ 37.358402, -3.064703],
-			    zoom:10,
+			    center:[ 0, 0], // [ 37.358402, -3.064703]
+			    zoom:1,
 			    pitch:10
 			});
 			map.scrollZoom.disable();
@@ -54,7 +49,8 @@ window.onload = function(){
 		function goToCurrentLocation(location){
 			return new Promise( (resolve, reject) => {
 				map.flyTo({
-					center:location.lnglat
+					center:location.lnglat,
+					zoom:10
 				})
 
 				resolve(location)
