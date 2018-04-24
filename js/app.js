@@ -19,12 +19,13 @@ window.onload = function(){
 
 			map.on('load', function(){
 					locations.then( (data) => {
+						console.log(data.locations[0])
 						goToCurrentLocation(data.locations[0]);
 
-						addPoint(data.locations[0], "nyc_01")
-						updateRadius("nyc_01")
+						// addPoint(data.locations[0], "nyc_01")
+						// updateRadius("nyc_01")
 
-						writeLocation(data.locations[0])		
+						// writeLocation(data.locations[0])		
 
 					})
 			})
@@ -95,7 +96,7 @@ window.onload = function(){
 
 
 		async function getLocations(url){
-			let locations = await $.getJSON(url);
+			const locations = await $.getJSON(url);
 			return locations
 		}
 
