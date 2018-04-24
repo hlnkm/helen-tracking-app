@@ -15,7 +15,7 @@ window.onload = function(){
 		async function loadElements(){
 			initMap();
 			// loadData();
-			const locations = await getLocations("../data/locations.json")
+			const locations = await getLocations("/data/locations.json")
 
 			map.on('load', function(){
 					// locations.then( (data) => {
