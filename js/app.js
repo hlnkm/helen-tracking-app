@@ -12,22 +12,22 @@ window.onload = function(){
 		};
 
 
-		function loadElements(){
+		async function loadElements(){
 			initMap();
 			// loadData();
-			const locations = getLocations("../data/locations.json")
+			const locations = await getLocations("../data/locations.json")
 
 			map.on('load', function(){
-					locations.then( (data) => {
-						console.log(data.locations[0])
-						goToCurrentLocation(data.locations[0]);
+					// locations.then( (data) => {
+						console.log(locations.locations[0])
+						goToCurrentLocation(locations.locations[0]);
 
 						// addPoint(data.locations[0], "nyc_01")
 						// updateRadius("nyc_01")
 
 						// writeLocation(data.locations[0])		
 
-					})
+					// })
 			})
 			
 		}
