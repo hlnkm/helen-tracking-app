@@ -14,20 +14,25 @@ window.onload = function(){
 
 		async function loadElements(){
 			initMap();
-			// loadData();
-			const locations = await getLocations("/data/locations.json")
-
 			map.on('load', function(){
-					// locations.then( (data) => {
-						console.log(locations.locations[0])
-						goToCurrentLocation(locations.locations[0]);
+
+				getLocations("../data/locations.json")
+					.then( (data) => {
+						goToCurrentLocation(data.locations[0])
+						return data;
+					})
+					.then( (data) => {
+						addPoint(data.locations[0], "nyc_01")
+						updateRadius("nyc_01")
+						writeLocation(data.locations[0])
+						return true
+					})
+						
 
 						// addPoint(data.locations[0], "nyc_01")
 						// updateRadius("nyc_01")
 
 						// writeLocation(data.locations[0])		
-
-					// })
 			})
 			
 		}
@@ -47,9 +52,14 @@ window.onload = function(){
 
 		// go to current location
 		function goToCurrentLocation(location){
-			map.flyTo({
-				center:location.lnglat
+			return new Promise( (resolve, reject) => {
+				map.flyTo({
+					center:location.lnglat
+				})
+
+				resolve(location)
 			})
+			
 		}
 
 		function locationPoint(location){
@@ -95,9 +105,12 @@ window.onload = function(){
 
 
 
-		async function getLocations(url){
-			const locations = await $.getJSON(url);
-			return locations
+		function getLocations(url){
+			return new Promise( (resolve, reject) => {
+				$.getJSON(url, (data) => {
+					resolve(data);
+				});
+			}) 
 		}
 
 
