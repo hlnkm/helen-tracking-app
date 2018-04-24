@@ -16,7 +16,7 @@ window.onload = function(){
 			initMap();
 			map.on('load', function(){
 
-				getLocations("../data/locations.json")
+				getLocations("/data/locations.json")
 					.then( (data) => {
 						goToCurrentLocation(data.locations[0])
 						return data;
