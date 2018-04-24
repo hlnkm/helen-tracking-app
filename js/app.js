@@ -95,7 +95,7 @@ window.onload = function(){
 		}
 
 		function writeLocation(location){
-			$("#header").text(`Helen is currently in ${location.place} near ${location.lnglat.lat}, ${location.lnglat.lng}`)
+			$("#header-text").text(`Helen is currently in ${location.place} near ${location.lnglat.lat}, ${location.lnglat.lng}`)
 		}
 		
 

@@ -22,7 +22,7 @@ html,body{
 }
 
 #header{
-	margin-top:20px;
+	/*margin-top:20px;*/
 	width:100%;
 	color:white;
 	text-shadow: 2px 1px black;
@@ -37,4 +37,11 @@ html,body{
 	align-items: center;
 	z-index: 1000;
 	text-align: center;
+}
+
+#header-text{
+	/*margin-top:20px;*/
+	width:80%;
+	padding:20px 10px 10px 10px;
+
 }
