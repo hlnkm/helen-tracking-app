@@ -14,23 +14,25 @@ window.onload = function(){
 
 		async function loadElements(){
 			initMap();
-			map.on('load', function(){
 
-				getLocations("../data/locations.json")
-					.then( (data) => {
-						goToCurrentLocation(data.locations[0])
-						return data;
-					})
-					.then( (data) => {
-						addPoint(data.locations[0], "nyc_01")
-						updateRadius("nyc_01")
-						writeLocation(data.locations[0])
-						return true
-					})
-							
+			map.on("load", async function(){
+				let data = await getLocations("../data/locations.json")
+				let {locations} = data;
+				let latestLocation = locationPoint(locations[ locations.length - 1 ]) 
+				goToCurrentLocation(latestLocation);
+				addPoint(latestLocation, "arusha")
+
+				updateRadius("arusha")
+
+				writeLocation(latestLocation);
+
+
+				addLine(data, "journey")
+
 			})
 			
 		}
+
 
 		function initMap(){
 			map = new mapboxgl.Map({
@@ -44,43 +46,24 @@ window.onload = function(){
 			map.addControl(new mapboxgl.NavigationControl());
 		}
 
+		/***
+		@ get locations
+		*/
+		async function getLocations(url){
+			let data = await $.getJSON(url);
+			return data;
+		}
 
-		// go to current location
-		function goToCurrentLocation(location){
-			return new Promise( (resolve, reject) => {
-				map.flyTo({
-					center:location.lnglat,
-					zoom:10
-				})
+		/**
+		@ Go to Current Location
+		*/
+		function goToCurrentLocation(latestLocation){
 
-				resolve(location)
+			map.flyTo({
+				center: [latestLocation.coordinates[0], latestLocation.coordinates[1]],
+				zoom:12
 			})
-			
-		}
 
-		function locationPoint(location){
-			return {
-        "type": "Point",
-        "coordinates": [location.lnglat.lng,location.lnglat.lat]
-	    }
-		}
-
-		function addPoint(datapoint, pointName){
-			// Add a source and layer displaying a point which will be animated in a circle.
-			    map.addSource(pointName, {
-			        "type": "geojson",
-			        "data": locationPoint(datapoint)
-			    });
-
-			    map.addLayer({
-			        "id": pointName,
-			        "source": pointName,
-			        "type": "circle",
-			        "paint": {
-			            "circle-radius": 10,
-			            "circle-color": "#EB6E80"
-			        }
-			    });
 		}
 
 		function updateRadius( pointName){
@@ -94,20 +77,83 @@ window.onload = function(){
 			
 		}
 
+
+		function locationPoint(location){
+			return {
+        "type": "Point",
+        "coordinates": [location.lnglat.lng, location.lnglat.lat],
+        "properties":{
+        	"name":location.place
+        }
+	    }
+		}
+
+		function addPoint(datapoint, pointName){
+			// Add a source and layer displaying a point which will be animated in a circle.
+			    map.addSource(pointName, {
+			        "type": "geojson",
+			        "data": datapoint
+			    });
+
+			    map.addLayer({
+			        "id": pointName,
+			        "source": pointName,
+			        "type": "circle",
+			        "paint": {
+			            "circle-radius": 4,
+			            "circle-color": "#EB6E80"
+			        }
+			    });
+		}
+
+		function addLine(dataArr, lineName){
+					let geojson = {
+					  "type": "FeatureCollection",
+					  "features": [
+					    {
+					      "type": "Feature",
+					      "properties": {},
+					      "geometry": {
+					        "type": "LineString",
+					        "coordinates": []
+					      }
+					    }
+					  ]
+					}
+
+
+
+					// stuff in the coordinates
+					dataArr.locations.forEach( location => {
+						console.log(location)
+						geojson.features[0].geometry.coordinates.push([ location.lnglat.lng, location.lnglat.lat])
+					})
+					console.log(geojson)
+
+
+			    map.addSource(lineName, {
+			        "type": "geojson",
+			        "data": geojson
+			    });
+
+			    map.addLayer({
+			        "id": lineName,
+			        "source": lineName,
+			        "type": "line",
+			        "paint": {
+			            "line-width": 4,
+			            "line-color": "#EB6E80"
+			        }
+			    });
+		}
+
+		
 		function writeLocation(location){
-			$("#header-text").text(`Helen is currently in ${location.place} near ${location.lnglat.lat}, ${location.lnglat.lng}`)
+			$("#header-text").text(`Helen is currently in ${location.properties.name} near ${location.coordinates[1]}, ${location.coordinates[0]}`)
 		}
 		
 
-
-
-		function getLocations(url){
-			return new Promise( (resolve, reject) => {
-				$.getJSON(url, (data) => {
-					resolve(data);
-				});
-			}) 
-		}
+	
 
 
 		return{

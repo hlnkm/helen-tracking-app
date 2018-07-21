@@ -3,6 +3,10 @@
 		{
 			"place":"New York City",
 			"lnglat": {"lng":-73.9712, "lat":40.7741}
+		},
+		{
+			"place":"Arusha",
+			"lnglat": {"lng":36.683065, "lat":-3.386926}
 		} 
 	]
 }
