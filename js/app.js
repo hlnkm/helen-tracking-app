@@ -149,7 +149,7 @@ window.onload = function(){
 
 		
 		function writeLocation(location){
-			$("#header-text").text(`Helen is currently in ${location.properties.name} near ${location.coordinates[1]}, ${location.coordinates[0]}`)
+			$("#header-text").text(`Helen is currently near ${location.properties.name} around ${location.coordinates[1]}, ${location.coordinates[0]}`)
 		}
 		
 
