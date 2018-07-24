@@ -3,6 +3,22 @@
 		{
 			"place":"New York City",
 			"lnglat": {"lng":-73.9712, "lat":40.7741}
+		},
+		{
+			"place":"Kilimanjaro International",
+			"lnglat": {"lng":37.064167, "lat":-3.423879}
+		},
+		{
+			"place":"Arusha",
+			"lnglat": {"lng":37.051621, "lat":-3.374359 }
+		},
+		{
+			"place":"Arusha",
+			"lnglat": {"lng":36.939110 , "lat":-3.388957 }
+		},
+		{
+			"place":"Arusha",
+			"lnglat": {"lng":36.864205, "lat":-3.373160 }
 		}
 	]
 }
