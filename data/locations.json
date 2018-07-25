@@ -19,6 +19,22 @@
 		{
 			"place":"Arusha",
 			"lnglat": {"lng":36.864205, "lat":-3.373160 }
+		},
+		{
+			"place":"Base of Mt. Kilimanjaro",
+			"lnglat": {"lng":37.043216 , "lat":-3.058855 }
+		},
+		{
+			"place":"Shira Service Road",
+			"lnglat": {"lng":37.230648  , "lat":-2.986415}
+		},
+		{
+			"place":"Shira Service Road",
+			"lnglat": {"lng":37.231421, "lat":-2.990748 }
+		},
+		{
+			"place":"Shira Camp 1",
+			"lnglat": {"lng":37.229255, "lat":-3.013150}
 		}
 	]
 }
