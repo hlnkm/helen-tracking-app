@@ -37,19 +37,19 @@
 			"lnglat": {"lng":37.229255, "lat":-3.013150}
 		},
 		{
-			"place":"12000 ft.",
+			"place":"12,000 ft.",
 			"lnglat": {"lng":37.258673 , "lat":-3.034383}
 		},
 		{
-			"place":"13000 ft.",
+			"place":"13,000 ft.",
 			"lnglat": {"lng":37.278821 , "lat":-3.043170}
 		},
 		{
-			"place":"13500 ft.",
+			"place":"13,500 ft.",
 			"lnglat": {"lng":37.290601, "lat":-3.043041 }
 		},
 		{
-			"place":"13800 ft. (Camp Moir Hut)",
+			"place":"13,800 ft. (Camp Moir Hut)",
 			"lnglat": {"lng":37.299635, "lat":-3.042129 }
 		},
 		{
@@ -57,11 +57,11 @@
 			"lnglat": {"lng":37.309956 , "lat":-3.031990 }
 		},
 		{
-			"place":"14,039ft.",
+			"place":"14,039 ft.",
 			"lnglat": {"lng":37.329246, "lat":-3.019920  }
 		},
 		{
-			"place":"13,409ft.",
+			"place":"13,409 ft.",
 			"lnglat": {"lng":37.349975, "lat":-3.011810  }
 		}
 	]
