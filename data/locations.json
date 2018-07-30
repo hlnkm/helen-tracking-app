@@ -1,96 +1,207 @@
 {
-	"locations": [
-		{
-			"place":"New York City",
-			"lnglat": {"lng":-73.9712, "lat":40.7741}
-		},
-		{
-			"place":"Kilimanjaro International",
-			"lnglat": {"lng":37.064167, "lat":-3.423879}
-		},
-		{
-			"place":"Arusha",
-			"lnglat": {"lng":37.051621, "lat":-3.374359 }
-		},
-		{
-			"place":"Arusha",
-			"lnglat": {"lng":36.939110 , "lat":-3.388957 }
-		},
-		{
-			"place":"Arusha",
-			"lnglat": {"lng":36.864205, "lat":-3.373160 }
-		},
-		{
-			"place":"Base of Mt. Kilimanjaro",
-			"lnglat": {"lng":37.043216 , "lat":-3.058855 }
-		},
-		{
-			"place":"Shira Service Road",
-			"lnglat": {"lng":37.230648  , "lat":-2.986415}
-		},
-		{
-			"place":"Shira Service Road",
-			"lnglat": {"lng":37.231421, "lat":-2.990748 }
-		},
-		{
-			"place":"Shira Camp 1",
-			"lnglat": {"lng":37.229255, "lat":-3.013150}
-		},
-		{
-			"place":"12,000 ft.",
-			"lnglat": {"lng":37.258673 , "lat":-3.034383}
-		},
-		{
-			"place":"13,000 ft.",
-			"lnglat": {"lng":37.278821 , "lat":-3.043170}
-		},
-		{
-			"place":"13,500 ft.",
-			"lnglat": {"lng":37.290601, "lat":-3.043041 }
-		},
-		{
-			"place":"13,800 ft. (Camp Moir Hut)",
-			"lnglat": {"lng":37.299635, "lat":-3.042129 }
-		},
-		{
-			"place":"14,253 ft.",
-			"lnglat": {"lng":37.309956 , "lat":-3.031990 }
-		},
-		{
-			"place":"14,039 ft.",
-			"lnglat": {"lng":37.329246, "lat":-3.019920  }
-		},
-		{
-			"place":"13,409 ft.",
-			"lnglat": {"lng":37.349975, "lat":-3.011810  }
-		},
-		{
-			"place":"13,122 ft.",
-			"lnglat": {"lng":37.368450, "lat":-3.020241  }
-		},
-		{
-			"place":"13,134 ft.",
-			"lnglat": {"lng":37.374866 , "lat":-3.024448  }
-		},
-		{
-			"place":"13,077 ft.",
-			"lnglat": {"lng":37.395036  , "lat":-3.036883  }
-		},
-		{
-			"place":"12,964 ft. (third cave camp)",
-			"lnglat": {"lng":37.410615 , "lat":-3.044533  }
-		},
-		{
-			"place":"14,229 ft.",
-			"lnglat": {"lng":37.402396  , "lat":-3.065356   }
-		},
-		{
-			"place":"15,398 ft.",
-			"lnglat": {"lng":37.389565   , "lat":-3.080335   }
-		},
-		{
-			"place":"15,387 ft. (Base camp)",
-			"lnglat": {"lng":37.389778   , "lat":-3.082201   }
-		}
-	]
-} 
+  "locations": [
+    {
+      "place": "New York City",
+      "lnglat": {
+        "lng": -73.9712,
+        "lat": 40.7741
+      }
+    },
+    {
+      "place": "Kilimanjaro International",
+      "lnglat": {
+        "lng": 37.064167,
+        "lat": -3.423879
+      }
+    },
+    {
+      "place": "Arusha",
+      "lnglat": {
+        "lng": 37.051621,
+        "lat": -3.374359
+      }
+    },
+    {
+      "place": "Arusha",
+      "lnglat": {
+        "lng": 36.939110,
+        "lat": -3.388957
+      }
+    },
+    {
+      "place": "Arusha",
+      "lnglat": {
+        "lng": 36.864205,
+        "lat": -3.373160
+      }
+    },
+    {
+      "place": "Base of Mt. Kilimanjaro",
+      "lnglat": {
+        "lng": 37.043216,
+        "lat": -3.058855
+      }
+    },
+    {
+      "place": "Shira Service Road",
+      "lnglat": {
+        "lng": 37.230648,
+        "lat": -2.986415
+      }
+    },
+    {
+      "place": "Shira Service Road",
+      "lnglat": {
+        "lng": 37.231421,
+        "lat": -2.990748
+      }
+    },
+    {
+      "place": "Shira Camp 1",
+      "lnglat": {
+        "lng": 37.229255,
+        "lat": -3.013150
+      }
+    },
+    {
+      "place": "12,000 ft.",
+      "lnglat": {
+        "lng": 37.258673,
+        "lat": -3.034383
+      }
+    },
+    {
+      "place": "13,000 ft.",
+      "lnglat": {
+        "lng": 37.278821,
+        "lat": -3.043170
+      }
+    },
+    {
+      "place": "13,500 ft.",
+      "lnglat": {
+        "lng": 37.290601,
+        "lat": -3.043041
+      }
+    },
+    {
+      "place": "13,800 ft. (Camp Moir Hut)",
+      "lnglat": {
+        "lng": 37.299635,
+        "lat": -3.042129
+      }
+    },
+    {
+      "place": "14,253 ft.",
+      "lnglat": {
+        "lng": 37.309956,
+        "lat": -3.031990
+      }
+    },
+    {
+      "place": "14,039 ft.",
+      "lnglat": {
+        "lng": 37.329246,
+        "lat": -3.019920
+      }
+    },
+    {
+      "place": "13,409 ft.",
+      "lnglat": {
+        "lng": 37.349975,
+        "lat": -3.011810
+      }
+    },
+    {
+      "place": "13,122 ft.",
+      "lnglat": {
+        "lng": 37.368450,
+        "lat": -3.020241
+      }
+    },
+    {
+      "place": "13,134 ft.",
+      "lnglat": {
+        "lng": 37.374866,
+        "lat": -3.024448
+      }
+    },
+    {
+      "place": "13,077 ft.",
+      "lnglat": {
+        "lng": 37.395036,
+        "lat": -3.036883
+      }
+    },
+    {
+      "place": "12,964 ft. (third cave camp)",
+      "lnglat": {
+        "lng": 37.410615,
+        "lat": -3.044533
+      }
+    },
+    {
+      "place": "14,229 ft.",
+      "lnglat": {
+        "lng": 37.402396,
+        "lat": -3.065356
+      }
+    },
+    {
+      "place": "15,398 ft.",
+      "lnglat": {
+        "lng": 37.389565,
+        "lat": -3.080335
+      }
+    },
+    {
+      "place": "15,387 ft. (Base camp)",
+      "lnglat": {
+        "lng": 37.389778,
+        "lat": -3.082201
+      }
+    },
+    {
+      "place": "15,398.69 ft.",
+      "lnglat": {
+        "lat": -3.082180,
+        "lng": 37.389778
+      }
+    },
+    {
+      "place": "16,041.93 ft.",
+      "lnglat": {
+        "lat": -3.078178,
+        "lng": 37.382913
+      }
+    },
+    {
+      "place": "16,990.19 ft.",
+      "lnglat": {
+        "lat": -3.077716,
+        "lng": 37.375831
+      }
+    },
+    {
+      "place": "17,985.53 ft.",
+      "lnglat": {
+        "lat": -3.075421,
+        "lng": 37.371175
+      }
+    },
+    {
+      "place": "18,734.22 ft.",
+      "lnglat": {
+        "lat": -3.074605,
+        "lng": 37.367956
+      }
+    },
+    {
+      "place": "19,187.01 ft. (near Uruhu Peak)",
+      "lnglat": {
+        "lat": -3.079380,
+        "lng": 37.358601
+      }
+    }
+  ]
+}
