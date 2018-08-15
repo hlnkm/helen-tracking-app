@@ -19,15 +19,27 @@ window.onload = function(){
 				let data = await getLocations("../data/locations.json")
 				let {locations} = data;
 				let latestLocation = locationPoint(locations[ locations.length - 1 ]) 
-				goToCurrentLocation(latestLocation);
+				
 				addPoint(latestLocation, "arusha")
 
 				updateRadius("arusha")
 
-				writeLocation(latestLocation);
+				
 
 
 				addLine(data, "journey")
+
+        if(new Date() > new Date("July 30, 2018") === true){
+          map.flyTo({
+            center: [37.358601, -3.079380],
+            zoom:12
+          })
+          $("#header-text").text("Helen made it to the top on July 30th at 2:05 PM!")
+
+        } else{
+          writeLocation(latestLocation);  
+          goToCurrentLocation(latestLocation);
+        }
 
 			})
 			
